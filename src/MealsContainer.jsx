@@ -1,9 +1,9 @@
 import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import { Droppable } from 'react-beautiful-dnd';
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-export default class Example extends React.Component {
+export default class MealsContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -49,8 +49,10 @@ export default class Example extends React.Component {
               </Col>
             </Row>
           </TabPane> */}
-          <TabPane tabId="1">
-          {/* <Droppable> */}
+          
+          <Droppable droppableId='thisWeek'>
+            {provided => (
+          <TabPane tabId="1" innerref={provided.innerRef} {...provided.droppableProps}>
             <Row>
               <Col sm="11" className="mealCard">
                 <Card body>
@@ -62,7 +64,6 @@ export default class Example extends React.Component {
               <Col sm="11" className="mealCard">
                 <Card body>
                   <CardTitle>Special Title Treatment</CardTitle>
-                  {/* <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/> */}
                   <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                   <Button>Go somewhere</Button>
                 </Card>
@@ -70,14 +71,15 @@ export default class Example extends React.Component {
               <Col sm="11" className="mealCard">
                 <Card body>
                   <CardTitle>Special Title Treatment</CardTitle>
-                  {/* <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/> */}
                   <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                   <Button>Go somewhere</Button>
                 </Card>
               </Col>
             </Row>
-            {/* </Droppable> */}
+            {provided.placeholder}
           </TabPane>
+          )}
+          </Droppable>
         </TabContent>
       </div>
     );

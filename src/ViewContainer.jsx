@@ -2,7 +2,7 @@ import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
-export default class Example extends React.Component {
+export default class ViewContainer extends React.Component {
   constructor(props) {
     super(props);
 
