@@ -6,3 +6,22 @@
   color: #61dafb;
 }
 
+.App section {
+  display: flex;
+  margin: 1em;
+  justify-content: space-between;
+}
+
+.nav-tabs {
+  margin-right: 2vw;
+}
+
+.columnContainer {
+  min-width: 40vw;
+  /* margin-right: 2em; */
+}
+
+.mealCard {
+  margin: .4em;
+}
+
