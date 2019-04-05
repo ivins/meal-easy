@@ -3,7 +3,6 @@ import './styles/App.css';
 import MealsContainer from './MealsContainer'
 import ViewContainer from './ViewContainer'
 import initialData from './initialData'
-import { DragDropContext } from 'react-beautiful-dnd';
 
 class App extends Component {
   constructor(props) {
@@ -13,22 +12,16 @@ class App extends Component {
     }
   }
 
-  onDragEnd = result => {
-    // Coming back here to handle state changes
-  }
-
   render() {
     return (
       <div className="App">
         <nav>
           <h1>Meal Easy</h1>
-          <p>{this.state.initialData.columns['column-1'].mealIds}</p>
+          {/* <p>{this.state.initialData.columns['column-1'].mealIds}</p> */}
         </nav>
         <section>
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            <MealsContainer />
-            <ViewContainer />
-          </DragDropContext>
+          <MealsContainer />
+          <ViewContainer />
         </section>
       </div>
     );

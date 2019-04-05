@@ -1,7 +1,8 @@
 import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import MealItem from './MealItem';
+
 
 export default class MealsContainer extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class MealsContainer extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '1'
+      activeTab: '2'
     };
   }
 
@@ -29,30 +30,27 @@ export default class MealsContainer extends React.Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              This Weeks Meal Plan
+              Last Week
             </NavLink>
           </NavItem>
-          {/* <NavItem>
+          <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
               This Week
             </NavLink>
-          </NavItem> */}
+          </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
-          {/* <TabPane tabId="1">
+          <TabPane tabId="1">
             <Row>
               <Col sm="12">
                 <h4>Tab 1 Contents</h4>
               </Col>
             </Row>
-          </TabPane> */}
-          
-          <Droppable droppableId='thisWeek'>
-            {provided => (
-          <TabPane tabId="1" innerref={provided.innerRef} {...provided.droppableProps}>
+          </TabPane>
+          <TabPane tabId="2">
             <Row>
               <Col sm="11" className="mealCard">
                 <Card body>
@@ -64,22 +62,13 @@ export default class MealsContainer extends React.Component {
               <Col sm="11" className="mealCard">
                 <Card body>
                   <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="11" className="mealCard">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
+                  <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/>
                   <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                   <Button>Go somewhere</Button>
                 </Card>
               </Col>
             </Row>
-            {provided.placeholder}
           </TabPane>
-          )}
-          </Droppable>
         </TabContent>
       </div>
     );
