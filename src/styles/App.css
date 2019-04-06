@@ -22,7 +22,7 @@
   /* margin-right: 2em; */
 }
 
-.mealCard {
+.mealCard, .recipeCard {
   margin: .4em;
 }
 

@@ -30,7 +30,7 @@ export default class MealsContainer extends React.Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              Last Week
+              <b>My Favourites</b>
             </NavLink>
           </NavItem>
           <NavItem>
@@ -38,33 +38,26 @@ export default class MealsContainer extends React.Component {
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              This Week
+              <b>Need Ideas?</b>
             </NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <Row>
-              <Col sm="12">
-                <h4>Tab 1 Contents</h4>
-              </Col>
+
+              <MealItem/>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
               <Col sm="11" className="mealCard">
                 <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="11" className="mealCard">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
+                  <h5>Ramen Noodle Coleslaw</h5>
                   <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <h6><b>Servings:</b> 8   <b>Time:</b> 15 minutes</h6>
+                  <h6><b>Dietary:</b> Vegetarian, Vegan, Diary-Free</h6>
+                  <Button>View Recipe</Button>
                 </Card>
               </Col>
             </Row>

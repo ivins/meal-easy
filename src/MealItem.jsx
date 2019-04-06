@@ -6,9 +6,11 @@ export default class MealItem extends React.Component {
     return (
       <Col sm="11" className="mealCard">
         <Card body>
-          <CardTitle>Special Title Treatment</CardTitle>
-          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Go somewhere</Button>
+          <h5>Ramen Noodle Coleslaw</h5>
+          <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/>
+          <h6><b>Servings:</b> 8   <b>Time:</b> 15 minutes</h6>
+          <h6><b>Dietary:</b> Vegetarian, Vegan, Diary-Free</h6>
+          <Button>View Recipe</Button>
         </Card>
       </Col>
     );
