@@ -14,7 +14,7 @@ const initialData = {
     "lowFodmap":false,
     "ketogenic":false,
     "whole30":false,
-    "servings":8,
+    "servings":7,
     "preparationMinutes":5,
     "cookingMinutes":10,
     "sourceUrl":"http://www.dizzybusyandhungry.com/ramen-noodle-coleslaw/",
@@ -127,9 +127,9 @@ const initialData = {
       }
       ],
     "id":556176,
-    "title":"Cramen Doodle Moleslaw",
+    "title":"Thai Sweet Potato Veggie Burgers with Spicy Peanut Sauce",
     "readyInMinutes":25,
-    "image":"https://spoonacular.com/recipeImages/Ramen-Noodle-Coleslaw-556177.jpg",
+    "image":"https://spoonacular.com/recipeImages/thai-sweet-potato-veggie-burgers-with-spicy-peanut-sauce-262682.jpg",
     "imageType":"jpg",
     "instructions":"Toast the sesame seeds, about 350 degrees in the oven for about 10-15 minutes. Keep an eye on them to make sure they don't burn.Mix together the following to make the dressing: olive oil, vinegar, sugar, salt, pepper, green onions, chicken flavor packet from the ramen noodle package.Crush the ramen noodles until there are no large chunks (small chunks are OK).Combine the shredded cabbage and ramen noodles in a large bowl.Pour the dressing on the cabbage/noodle mixture and toss to coat.Top with the toasted sesame seeds and almonds."
     }

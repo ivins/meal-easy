@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      favourites
+      favourites: {...favourites},
+      ideas: {...favourites}
     }
   }
 
@@ -20,7 +21,10 @@ class App extends Component {
           {/* <p>{this.state.favourites.recipes[0].title}</p> */}
         </nav>
         <section>
-          <MealsContainer favourites={this.state.favourites.recipes}/>
+          <MealsContainer 
+            favourites={this.state.favourites.recipes}
+            ideas={this.state.ideas.recipes}
+          />
           <ViewContainer />
         </section>
       </div>

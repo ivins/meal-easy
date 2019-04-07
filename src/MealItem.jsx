@@ -3,13 +3,30 @@ import { Card, Button, Col } from 'reactstrap';
 
 export default class MealItem extends React.Component {
   render() {
+    const Dietary = () => {
+      let dietType = [];
+      if (this.props.vegetarian) {
+        dietType.push('Vegetarian');
+      } 
+      if (this.props.vegan) {
+        dietType.push('Vegan');
+      }
+      if (this.props.glutenFree) {
+        dietType.push('Gluten-Free');
+      }
+      if (this.props.dairyFree) {
+        dietType.push('Dairy-Free');
+      }
+      return dietType.join();
+    }
     return (
       <Col sm="11" className="mealCard">
         <Card body>
           <h5>{this.props.title}</h5>
-          <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/>
-          <h6><b>Servings:</b> 8   <b>Time:</b> 15 minutes</h6>
-          <h6><b>Dietary:</b> Vegetarian, Vegan, Diary-Free</h6>
+          <img src={this.props.image} alt="food"/>
+          <h6><b>Servings:</b> {this.props.servings}</h6>   
+          <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
+          <h6><b>Dietary:</b> <Dietary/></h6>
           <Button>View Recipe</Button>
         </Card>
       </Col>

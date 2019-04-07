@@ -26,6 +26,10 @@ export default class MealsContainer extends React.Component {
       return <MealItem key={item.id} {...item}/>
     })
 
+    const ideaItems = this.props.ideas.map((item) => {
+      return <MealItem key={item.id} {...item}/>
+    })
+
     return (
       <div className="columnContainer">
         <Nav tabs>
@@ -50,12 +54,11 @@ export default class MealsContainer extends React.Component {
           <TabPane tabId="1">
             <Row>
               {favouriteItems}
-              <p>{this.props.favourites[0].title}</p>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <MealItem/>
+              {ideaItems}
             </Row>
           </TabPane>
         </TabContent>
