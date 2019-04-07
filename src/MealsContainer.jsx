@@ -58,7 +58,7 @@ export default class MealsContainer extends React.Component {
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              {ideaItems}
+              {ideaItems? ideaItems : <h5>Search for ideas above</h5>}
             </Row>
           </TabPane>
         </TabContent>

@@ -19,10 +19,27 @@
 
 .columnContainer {
   min-width: 40vw;
-  /* margin-right: 2em; */
+  width: 100%;
 }
 
 .mealCard, .recipeCard {
   margin: .4em;
 }
 
+.mealCard {
+  min-width: 420px;
+}
+
+.card-body {
+  align-items: center;
+}
+
+.card-body > img {
+  max-width: 360px;
+}
+
+@media screen and (max-width: 800px) {
+  .App section {
+    display: block;
+  }
+}
