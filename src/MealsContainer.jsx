@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row } from 'reactstrap';
 import classnames from 'classnames';
 import MealItem from './MealItem';
 
@@ -10,7 +10,7 @@ export default class MealsContainer extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '2'
+      activeTab: '1'
     };
   }
 
@@ -22,6 +22,10 @@ export default class MealsContainer extends React.Component {
     }
   }
   render() {
+    const favouriteItems = this.props.favourites.map((item) => {
+      return <MealItem key={item.id} {...item}/>
+    })
+
     return (
       <div className="columnContainer">
         <Nav tabs>
@@ -45,21 +49,13 @@ export default class MealsContainer extends React.Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <Row>
-
-              <MealItem/>
+              {favouriteItems}
+              <p>{this.props.favourites[0].title}</p>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col sm="11" className="mealCard">
-                <Card body>
-                  <h5>Ramen Noodle Coleslaw</h5>
-                  <img src="https://spoonacular.com/recipeImages/537176-240x150.jpg" alt="food"/>
-                  <h6><b>Servings:</b> 8   <b>Time:</b> 15 minutes</h6>
-                  <h6><b>Dietary:</b> Vegetarian, Vegan, Diary-Free</h6>
-                  <Button>View Recipe</Button>
-                </Card>
-              </Col>
+              <MealItem/>
             </Row>
           </TabPane>
         </TabContent>
