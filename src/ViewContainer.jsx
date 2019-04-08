@@ -61,28 +61,43 @@ export default class ViewContainer extends React.Component {
 
     const inFavourites = !this.state.inFavourites ? <Button onClick={this.handle_addToFavourites}>Add to Favourites</Button> : <h6>This recipe is in your favourites.</h6>
 
-    return (
-      <div id="recipe" className="columnContainer">
+    if(!this.props.id){
+      return (
+        <div id="recipe" className="columnContainer">
         <TabContent >
           <Col sm="11" className="recipeCard">
             <Card body>
-              <h3>{this.props.title}</h3><br/>
-              <img src={this.props.image} alt={this.props.image}/><br/>
-              <h6><b>Servings:</b> {this.props.servings}   <b>Prep:</b> {this.props.preparationMinutes} minutes   <b>Cook:</b> {this.props.cookingMinutes} minutes</h6>
-              <Dietary/>
-              <br/>
-              <h5>Ingredients</h5>
-              <ul className="list-group">
-                {ingredients? ingredients: <li className="ingredient-item">Sorry something went wrong! No ingredients were provided.</li>}
-              </ul>
-              <br/>
-              <h5>Instructions</h5>
-              <CardText>{this.props.instructions}</CardText><br/>
-              {inFavourites}
+              <h3>Recipe Panel</h3><br/>
+              <h5>Select a recipe to view</h5>
             </Card>
           </Col>
         </TabContent>
       </div>
-    );
+      )
+    } else {
+      return (
+        <div id="recipe" className="columnContainer">
+          <TabContent >
+            <Col sm="11" className="recipeCard">
+              <Card body>
+                <h3>{this.props.title}</h3><br/>
+                <img src={this.props.image} alt={this.props.image}/><br/>
+                <h6><b>Servings:</b> {this.props.servings}   <b>Prep:</b> {this.props.preparationMinutes} minutes   <b>Cook:</b> {this.props.cookingMinutes} minutes</h6>
+                <Dietary/>
+                <br/>
+                <h5>Ingredients</h5>
+                <ul className="list-group">
+                  {ingredients? ingredients: <li className="ingredient-item">Sorry something went wrong! No ingredients were provided.</li>}
+                </ul>
+                <br/>
+                <h5>Instructions</h5>
+                <CardText>{this.props.instructions}</CardText><br/>
+                {inFavourites}
+              </Card>
+            </Col>
+          </TabContent>
+        </div>
+      );
+    }
   }
 }

@@ -36,7 +36,7 @@ export default class MealItem extends React.Component {
           <h6><b>Servings:</b> {this.props.servings}</h6>   
           <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
           <Dietary/>
-          <Button onClick={this.handle_viewRecipe}>View Recipe</Button>
+          <a href="#recipe"><Button onClick={this.handle_viewRecipe}>View Recipe</Button></a>
         </Card>
       </Col>
     );

@@ -15,7 +15,7 @@ class App extends Component {
       favourites: favourites.recipes,
       ideas: sampleIdeas.recipes,
       // ideas: [],
-      viewRecipe: {...recipe}
+      viewRecipe: {}
     }
     this.randomQuery = this.randomQuery.bind(this);
     this.addToFavourites = this.addToFavourites.bind(this);

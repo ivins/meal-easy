@@ -47,6 +47,10 @@
   margin-right: .25em;
 }
 
+#recipe {
+  margin-top: 40px;
+}
+
 .ingredient-item {
   width: 100%;
   text-align: left;
