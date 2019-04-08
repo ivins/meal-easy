@@ -58,6 +58,11 @@
   border: 1px solid rgba(0,0,0,.125);
 }
 
+.ingredient-item > img {
+  width: 100px;
+  margin-right: .5em;
+}
+
 @media screen and (max-width: 915px) {
   .App section {
     display: block;

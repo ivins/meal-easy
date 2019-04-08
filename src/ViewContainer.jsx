@@ -50,7 +50,8 @@ export default class ViewContainer extends React.Component {
     }
 
     const ingredients = this.props.extendedIngredients? this.props.extendedIngredients.map((item)=>{
-      return <li className="ingredient-item" key={item.id}><img src={item.image} alt={item.name}/><span>{item.originalString}</span></li>
+      const image = item.image? <img src={"https://spoonacular.com/cdn/ingredients_100x100/"+item.image} alt={item.name}/> : <img src="https://spoonacular.com/cdn/ingredients_100x100/none.jpg" alt={item.name}/>
+      return <li className="ingredient-item" key={item.id}>{image}<span>{item.originalString}</span></li>
     }): false;
 
     const inFavourites = !this.state.inFavourites ? <Button onClick={this.handle_addToFavourites}>Add to Favourites</Button> : <h6>This recipe is in your favourites.</h6>
@@ -67,7 +68,7 @@ export default class ViewContainer extends React.Component {
               <br/>
               <h5>Ingredients</h5>
               <ul className="list-group">
-                {ingredients? ingredients: <li>Sorry something went wrong! No ingredients were provided.</li>}
+                {ingredients? ingredients: <li className="ingredient-item">Sorry something went wrong! No ingredients were provided.</li>}
               </ul>
               <br/>
               <h5>Instructions</h5>

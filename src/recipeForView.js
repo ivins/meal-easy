@@ -24,7 +24,7 @@ const recipe = {
     {
     "id":12061,
     "aisle":"Nuts",
-    "image":"https://spoonacular.com/cdn/ingredients_100x100/almonds.jpg",
+    "image":"almonds.jpg",
     "name":"almonds",
     "amount":0.25,
     "unit":"cup",
@@ -36,7 +36,7 @@ const recipe = {
     {
     "id":10011109,
     "aisle":"Produce",
-    "image":"https://spoonacular.com/cdn/ingredients_100x100/coleslaw.png",
+    "image":"coleslaw.png",
     "name":"coleslaw mix",
     "amount":1,
     "unit":"bag",
@@ -48,7 +48,7 @@ const recipe = {
     {
     "id":6016,
     "aisle":"Canned and Jarred",
-    "image":"https://spoonacular.com/cdn/ingredients_100x100/cream-of-chicken-soup.jpg",
+    "image":"cream-of-chicken-soup.jpg",
     "name":"cream of chicken soup",
     "amount":1,
     "unit":"package",
