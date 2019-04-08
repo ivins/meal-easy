@@ -59,7 +59,7 @@
 }
 
 .ingredient-item > img {
-  width: 100px;
+  max-height: 100px;
   margin-right: .5em;
 }
 

@@ -15,16 +15,21 @@ export default class ViewContainer extends React.Component {
 
   checkRecipeStatus = () => {
     if (this.props.favourites) {
-      this.props.favourites.forEach(item=>{
+      for (let item of this.props.favourites) {
         if(this.props.id === item.id) {
-          this.setState({ inFavourites: true })
+          this.setState({ inFavourites: true });
+          break;
+        } else {
+          this.setState({ inFavourites: false });
         }
-      })
-    }
+      }
+    } 
   }
 
-  componentDidMount() {
-    this.checkRecipeStatus()
+  componentDidUpdate(prevProps) {
+    if (prevProps.id !== this.props.id) {
+      this.checkRecipeStatus()
+    }
   }
 
   render() {
@@ -49,9 +54,9 @@ export default class ViewContainer extends React.Component {
       }
     }
 
-    const ingredients = this.props.extendedIngredients? this.props.extendedIngredients.map((item)=>{
+    const ingredients = this.props.extendedIngredients? this.props.extendedIngredients.map((item,index)=>{
       const image = item.image? <img src={"https://spoonacular.com/cdn/ingredients_100x100/"+item.image} alt={item.name}/> : <img src="https://spoonacular.com/cdn/ingredients_100x100/none.jpg" alt={item.name}/>
-      return <li className="ingredient-item" key={item.id}>{image}<span>{item.originalString}</span></li>
+      return <li className="ingredient-item" key={item.id*7+index}>{image}<span>{item.originalString}</span></li>
     }): false;
 
     const inFavourites = !this.state.inFavourites ? <Button onClick={this.handle_addToFavourites}>Add to Favourites</Button> : <h6>This recipe is in your favourites.</h6>

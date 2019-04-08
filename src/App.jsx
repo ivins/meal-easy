@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import MealsContainer from './MealsContainer'
-import ViewContainer from './ViewContainer'
-import favourites from './initialData'
-import recipe from './recipeForView'
+import MealsContainer from './MealsContainer';
+import ViewContainer from './ViewContainer';
+import favourites from './initialData';
+import recipe from './recipeForView';
+import sampleIdeas from './sampleIdeas';
 import Axios from 'axios';
 
 
@@ -12,7 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       favourites: favourites.recipes,
-      ideas: [{...recipe}],
+      ideas: sampleIdeas.recipes,
       viewRecipe: {...recipe}
     }
     this.randomQuery = this.randomQuery.bind(this);
@@ -35,7 +36,7 @@ class App extends Component {
     })
     .then(response => {
       console.log(response)
-      this.setState({ideas: response.data})
+      this.setState({ideas: response.data.recipes})
     })
     .catch(error => {
       console.log(error);
