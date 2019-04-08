@@ -14,7 +14,7 @@ export default class ViewContainer extends React.Component {
         <TabContent >
           <Col sm="11" className="recipeCard">
             <Card body>
-              <h3>Ramen Noodle Coleslaw</h3><br/>
+              <h3>Ramen Noodle Coleslaw {this.props.test}</h3><br/>
               <h6><b>Servings:</b> 8   <b>Prep:</b> 5 minutes   <b>Cook:</b> 10 minutes</h6>
               <h6><b>Dietary:</b> Vegetarian, Vegan, Diary-Free</h6>
               <br/>

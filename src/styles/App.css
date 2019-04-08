@@ -38,6 +38,15 @@
   max-width: 360px;
 }
 
+.new-ideas {
+  display: flex;
+  width: 90%;
+}
+
+.new-ideas > input {
+  margin-right: .25em;
+}
+
 @media screen and (max-width: 800px) {
   .App section {
     display: block;

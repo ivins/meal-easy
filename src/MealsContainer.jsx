@@ -1,5 +1,8 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row } from 'reactstrap';
+import { 
+  TabContent, TabPane, Nav, NavItem, NavLink, 
+  Row, Button, Card, Col, FormGroup, Label, Input 
+} from 'reactstrap';
 import classnames from 'classnames';
 import MealItem from './MealItem';
 
@@ -22,13 +25,27 @@ export default class MealsContainer extends React.Component {
     }
   }
   render() {
-    const favouriteItems = this.props.favourites.map((item) => {
-      return <MealItem key={item.id} {...item}/>
-    })
-
-    const ideaItems = this.props.ideas ? this.props.ideas.map((item) => {
-      return <MealItem key={item.id} {...item}/>
+    const favouriteItems = this.props.favourites ? this.props.favourites.map((item, index) => {
+      return <MealItem key={item.id*7+index} {...item}/>
     }) : false;
+
+    const ideaItems = this.props.ideas ? this.props.ideas.map((item, index) => {
+      return <MealItem key={item.id*7+index} {...item}/>
+    }) : false;
+
+    const SearchInstruction = () => {
+      return (
+        <Col sm="11" className="mealCard">
+          <Card body>
+          <h5 className="search-instruction">Search for Recipe Ideas Below</h5>
+          <FormGroup className="new-ideas">
+            <Input type="text" name="text" id="tags" placeholder="Vegan, dessert, etc..." />
+            <Button>Search</Button>
+          </FormGroup>
+          </Card>
+        </Col>
+      )
+    }
 
     return (
       <div className="columnContainer">
@@ -58,7 +75,7 @@ export default class MealsContainer extends React.Component {
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              {ideaItems? ideaItems : <h5>Search for ideas above</h5>}
+              {ideaItems? ideaItems : <SearchInstruction/>}
             </Row>
           </TabPane>
         </TabContent>

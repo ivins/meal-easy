@@ -28,6 +28,7 @@ export default class MealItem extends React.Component {
           <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
           <h6><b>Dietary:</b> <Dietary/></h6>
           <Button>View Recipe</Button>
+          <h6>{this.props.id}</h6>
         </Card>
       </Col>
     );
