@@ -9,26 +9,50 @@ export default class ViewContainer extends React.Component {
   }
 
   render() {
+    const Dietary = () => {
+      let dietType = [];
+      if (this.props.vegetarian) {
+        dietType.push('Vegetarian');
+      } 
+      if (this.props.vegan) {
+        dietType.push('Vegan');
+      }
+      if (this.props.glutenFree) {
+        dietType.push('Gluten-Free');
+      }
+      if (this.props.dairyFree) {
+        dietType.push('Dairy-Free');
+      }
+      if (dietType.length === 0) {
+        return false
+      } else {
+        return <h6><b>Dietary:</b> {dietType.join(', ')}</h6>;
+      }
+    }
+
+    const ingredients = this.props.extendedIngredients.map((item)=>{
+      return <li className="ingredient-item" key={item.id}><img src={item.image} alt={item.name}/><span>{item.originalString}</span></li>
+    })
+
     return (
-      <div className="columnContainer">
+      <div id="recipe" className="columnContainer">
         <TabContent >
           <Col sm="11" className="recipeCard">
             <Card body>
-              <h3>Ramen Noodle Coleslaw {this.props.test}</h3><br/>
-              <h6><b>Servings:</b> 8   <b>Prep:</b> 5 minutes   <b>Cook:</b> 10 minutes</h6>
-              <h6><b>Dietary:</b> Vegetarian, Vegan, Diary-Free</h6>
+              <h3>{this.props.title}</h3><br/>
+              <img src={this.props.image} alt={this.props.image}/><br/>
+              <h6><b>Servings:</b> {this.props.servings}   <b>Prep:</b> {this.props.preparationMinutes} minutes   <b>Cook:</b> {this.props.cookingMinutes} minutes</h6>
+              <Dietary/>
               <br/>
               <h5>Ingredients</h5>
               <ul className="list-group">
-                <li className="list-group-item"><img src="https://spoonacular.com/cdn/ingredients_100x100/almonds.jpg" alt="almonds"/>¼ cup sliced almonds</li>
-                <li className="list-group-item"><img src="https://spoonacular.com/cdn/ingredients_100x100/coleslaw.png" alt="almonds"/>1 bag shredded cabbage/coleslaw mix</li>
-                <li className="list-group-item"><img src="https://spoonacular.com/cdn/ingredients_100x100/cream-of-chicken-soup.jpg" alt="almonds"/>1 package chicken flavor ramen noodle soup</li>
+                {ingredients}
               </ul>
               <br/>
               <h5>Instructions</h5>
-              <CardText>Toast the sesame seeds, about 350 degrees in the oven for about 10-15 minutes. Keep an eye on them to make sure they don't burn.Mix together the following to make the dressing: olive oil, vinegar, sugar, salt, pepper, green onions, chicken flavor packet from the ramen noodle package.Crush the ramen noodles until there are no large chunks (small chunks are OK).Combine the shredded cabbage and ramen noodles in a large bowl.Pour the dressing on the cabbage/noodle mixture and toss to coat.Top with the toasted sesame seeds and almonds.</CardText><br/>
-              
-              <Button>Add to My Favourites</Button>
+              <CardText>{this.props.instructions}</CardText><br/>
+              <Button>Add to Favourites</Button>
+              {this.props.id}
             </Card>
           </Col>
         </TabContent>

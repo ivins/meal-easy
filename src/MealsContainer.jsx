@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   TabContent, TabPane, Nav, NavItem, NavLink, 
-  Row, Button, Card, Col, FormGroup, Label, Input 
+  Row, Button, Card, Col, FormGroup, Input 
 } from 'reactstrap';
 import classnames from 'classnames';
 import MealItem from './MealItem';

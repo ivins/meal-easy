@@ -3,6 +3,7 @@ import './styles/App.css';
 import MealsContainer from './MealsContainer'
 import ViewContainer from './ViewContainer'
 import favourites from './initialData'
+import recipe from './recipeForView'
 import Axios from 'axios';
 
 
@@ -12,8 +13,9 @@ class App extends Component {
     this.state = {
       favourites: {...favourites},
       ideas: [],
-      recipe: {test:'hi'}
+      recipe: {...recipe}
     }
+    this.randomQuery = this.randomQuery.bind(this);
   }
 
   randomQuery = (keywords) => {

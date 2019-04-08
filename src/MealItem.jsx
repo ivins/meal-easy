@@ -17,7 +17,11 @@ export default class MealItem extends React.Component {
       if (this.props.dairyFree) {
         dietType.push('Dairy-Free');
       }
-      return dietType.join();
+      if (dietType.length === 0) {
+        return false
+      } else {
+        return <h6><b>Dietary:</b> {dietType.join(', ')}</h6>;
+      }
     }
     return (
       <Col sm="11" className="mealCard">
@@ -26,7 +30,7 @@ export default class MealItem extends React.Component {
           <img src={this.props.image} alt="food"/>
           <h6><b>Servings:</b> {this.props.servings}</h6>   
           <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
-          <h6><b>Dietary:</b> <Dietary/></h6>
+          <Dietary/>
           <Button>View Recipe</Button>
           <h6>{this.props.id}</h6>
         </Card>
