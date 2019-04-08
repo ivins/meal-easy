@@ -30,9 +30,9 @@ export default class ViewContainer extends React.Component {
       }
     }
 
-    const ingredients = this.props.extendedIngredients.map((item)=>{
+    const ingredients = this.props.extendedIngredients? this.props.extendedIngredients.map((item)=>{
       return <li className="ingredient-item" key={item.id}><img src={item.image} alt={item.name}/><span>{item.originalString}</span></li>
-    })
+    }): false;
 
     return (
       <div id="recipe" className="columnContainer">
@@ -46,7 +46,7 @@ export default class ViewContainer extends React.Component {
               <br/>
               <h5>Ingredients</h5>
               <ul className="list-group">
-                {ingredients}
+                {ingredients? ingredients: <li>Sorry something went wrong! No ingredients were provided.</li>}
               </ul>
               <br/>
               <h5>Instructions</h5>
