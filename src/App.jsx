@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       favourites: favourites.recipes,
       ideas: sampleIdeas.recipes,
+      // ideas: [],
       viewRecipe: {...recipe}
     }
     this.randomQuery = this.randomQuery.bind(this);

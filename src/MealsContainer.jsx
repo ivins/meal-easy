@@ -29,7 +29,7 @@ export default class MealsContainer extends React.Component {
       return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe}/>
     }) : false;
 
-    const ideaItems = this.props.ideas ? this.props.ideas.map((item, index) => {
+    const ideaItems = this.props.ideas.length > 0 ? this.props.ideas.map((item, index) => {
       return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe}/>
     }) : false;
 
@@ -75,7 +75,8 @@ export default class MealsContainer extends React.Component {
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              {ideaItems? ideaItems : <SearchInstruction/>}
+              <SearchInstruction/>
+              {ideaItems}
             </Row>
           </TabPane>
         </TabContent>
