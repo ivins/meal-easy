@@ -11,11 +11,12 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      favourites: {...favourites},
-      ideas: [],
+      favourites: favourites.recipes,
+      ideas: [{...recipe}],
       recipe: {...recipe}
     }
     this.randomQuery = this.randomQuery.bind(this);
+    this.addToFavourites = this.addToFavourites.bind(this);
   }
 
   randomQuery = (keywords) => {
@@ -40,6 +41,14 @@ class App extends Component {
     });
   }
 
+  addToFavourites = (id) => {
+    this.state.ideas.forEach(item=>{
+      if(item.id === id) {
+        return this.setState({favourites: this.state.favourites.concat(item)})
+      }
+    })
+  }
+
   componentDidMount() {
     // this.randomQuery("hi");
   }
@@ -52,10 +61,10 @@ class App extends Component {
         </nav>
         <section >
           <MealsContainer 
-            favourites={this.state.favourites.recipes}
-            ideas={this.state.ideas.recipes}
+            favourites={this.state.favourites}
+            ideas={this.state.ideas}
           />
-          <ViewContainer {...this.state.recipe}/>
+          <ViewContainer {...this.state.recipe} addToFavourites={this.addToFavourites} favourites={this.state.favourites}/>
         </section>
       </div>
     );

@@ -5,7 +5,26 @@ export default class ViewContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      inFavourites: false
     };
+  }
+  handle_addToFavourites = () => {
+    this.props.addToFavourites(this.props.id)
+    this.setState({ inFavourites: true })
+  }
+
+  checkRecipeStatus = () => {
+    if (this.props.favourites) {
+      this.props.favourites.forEach(item=>{
+        if(this.props.id === item.id) {
+          this.setState({ inFavourites: true })
+        }
+      })
+    }
+  }
+
+  componentDidMount() {
+    this.checkRecipeStatus()
   }
 
   render() {
@@ -34,6 +53,8 @@ export default class ViewContainer extends React.Component {
       return <li className="ingredient-item" key={item.id}><img src={item.image} alt={item.name}/><span>{item.originalString}</span></li>
     }): false;
 
+    const inFavourites = !this.state.inFavourites ? <Button onClick={this.handle_addToFavourites}>Add to Favourites</Button> : <h6>This recipe is in your favourites.</h6>
+
     return (
       <div id="recipe" className="columnContainer">
         <TabContent >
@@ -51,8 +72,7 @@ export default class ViewContainer extends React.Component {
               <br/>
               <h5>Instructions</h5>
               <CardText>{this.props.instructions}</CardText><br/>
-              <Button>Add to Favourites</Button>
-              {this.props.id}
+              {inFavourites}
             </Card>
           </Col>
         </TabContent>
