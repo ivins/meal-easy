@@ -26,9 +26,9 @@ export default class MealsContainer extends React.Component {
       return <MealItem key={item.id} {...item}/>
     })
 
-    const ideaItems = this.props.ideas.map((item) => {
+    const ideaItems = this.props.ideas ? this.props.ideas.map((item) => {
       return <MealItem key={item.id} {...item}/>
-    })
+    }) : false;
 
     return (
       <div className="columnContainer">
