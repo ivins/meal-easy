@@ -13,8 +13,8 @@ class App extends Component {
     super(props)
     this.state = {
       favourites: favourites.recipes,
-      ideas: sampleIdeas.recipes,
-      // ideas: [],
+      // ideas: sampleIdeas.recipes,
+      ideas: [],
       viewRecipe: {}
     }
     this.randomQuery = this.randomQuery.bind(this);
@@ -32,7 +32,7 @@ class App extends Component {
       },
       params: {
         number: '10',
-        tags: 'dessert'
+        tags: "vegetarian"
       }
     })
     .then(response => {
@@ -62,7 +62,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.randomQuery("hi");
+    // this.randomQuery("dessert");
   }
 
   render() {
@@ -76,6 +76,7 @@ class App extends Component {
             favourites = {this.state.favourites}
             ideas = {this.state.ideas}
             updateViewRecipe = {this.updateViewRecipe}
+            randomQuery = {this.randomQuery}
           />
           <ViewContainer {...this.state.viewRecipe} addToFavourites={this.addToFavourites} favourites={this.state.favourites}/>
         </section>

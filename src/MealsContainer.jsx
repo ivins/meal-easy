@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   TabContent, TabPane, Nav, NavItem, NavLink, 
-  Row, Button, Card, Col, FormGroup, Input 
+  Row, Button, Card, Col, FormGroup, Input, Form 
 } from 'reactstrap';
 import classnames from 'classnames';
 import MealItem from './MealItem';
@@ -15,6 +15,7 @@ export default class MealsContainer extends React.Component {
     this.state = {
       activeTab: '1'
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggle(tab) {
@@ -24,6 +25,14 @@ export default class MealsContainer extends React.Component {
       });
     }
   }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const query = event.currentTarget.query.value;
+    console.log(query)
+    this.props.randomQuery(query);
+  }
+
   render() {
     const favouriteItems = this.props.favourites ? this.props.favourites.map((item, index) => {
       return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe}/>
@@ -38,10 +47,12 @@ export default class MealsContainer extends React.Component {
         <Col sm="11" className="mealCard">
           <Card body>
           <h5 className="search-instruction">Search for Recipe Ideas Below</h5>
-          <FormGroup className="new-ideas">
-            <Input type="text" name="text" id="tags" placeholder="Vegan, dessert, etc..." />
-            <Button>Search</Button>
-          </FormGroup>
+          <Form onSubmit={this.handleSubmit}>
+            <FormGroup className="new-ideas" >
+              <Input type="text" name="query" placeholder="Vegan, dessert, etc..." />
+              <Button type="submit">Search</Button>
+            </FormGroup>
+          </Form>
           </Card>
         </Col>
       )
