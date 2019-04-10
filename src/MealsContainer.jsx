@@ -29,7 +29,6 @@ export default class MealsContainer extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const query = event.currentTarget.query.value;
-    console.log(query)
     this.props.randomQuery(query);
   }
 

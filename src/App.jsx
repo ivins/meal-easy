@@ -32,7 +32,7 @@ class App extends Component {
       },
       params: {
         number: '10',
-        tags: "vegetarian"
+        tags: `${keywords}`
       }
     })
     .then(response => {
