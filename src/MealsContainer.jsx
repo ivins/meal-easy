@@ -43,7 +43,7 @@ export default class MealsContainer extends React.Component {
 
     const SearchInstruction = () => {
       return (
-        <Col sm="11" className="mealCard">
+        <Col sm="11" >
           <Card body>
           <h5 className="search-instruction">Search for Recipe Ideas Below</h5>
           <Form onSubmit={this.handleSubmit}>

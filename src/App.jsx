@@ -81,6 +81,7 @@ class App extends Component {
       <div className="App">
         <nav>
           <h1>Meal Easy</h1>
+          <p>Search for recipe ideas and add them to your favourites.</p>
         </nav>
         <section >
           <MealsContainer 
