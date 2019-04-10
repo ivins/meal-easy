@@ -40,13 +40,15 @@ export default class MealItem extends React.Component {
     return (
       <Col sm="11" className="mealCard">
         <Card body>
-          <h5>{this.props.title}</h5>
+          <h5 className="card-title">{this.props.title}</h5>
           <img src={this.props.image} alt="food"/>
           <h6><b>Servings:</b> {this.props.servings}</h6>   
           <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
           <Dietary/>
-          <a href="#recipe"><Button onClick={this.handle_viewRecipe}>View Recipe</Button></a>
-          <Button onClick={this.handle_removeRecipe}>Remove From Favourites</Button>
+          <div>
+          <a href="#recipe"><Button color="info" onClick={this.handle_viewRecipe}>View Recipe</Button></a>
+          {this.props.removeRecipe? <Button color="danger"  onClick={this.handle_removeRecipe}>Remove From Favourites</Button> : null}
+          </div>
         </Card>
       </Col>
     );

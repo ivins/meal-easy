@@ -13,8 +13,8 @@ class App extends Component {
     super(props)
     this.state = {
       favourites: favourites.recipes,
-      // ideas: sampleIdeas.recipes,
-      ideas: [],
+      ideas: sampleIdeas.recipes,
+      // ideas: [],
       viewRecipe: {}
     }
     this.randomQuery = this.randomQuery.bind(this);

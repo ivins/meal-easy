@@ -34,17 +34,42 @@
   align-items: center;
 }
 
+.card-title {
+  color: forestgreen;
+}
+
 .card-body > img {
   max-width: 360px;
+  border-radius: 8px;
+}
+
+.card-body > div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.card-body > div > .btn, a > .btn {
+  font-weight: 600;
+}
+
+.card-body > form {
+  width: 90%
 }
 
 .new-ideas {
   display: flex;
-  width: 90%;
+  width: 100%;
 }
 
 .new-ideas > input {
   margin-right: .25em;
+}
+
+.new-ideas > button {
+  background-color: #824900;
+  color: white;
+  font-weight: 600;
 }
 
 #recipe {
