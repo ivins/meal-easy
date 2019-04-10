@@ -3,7 +3,6 @@ import './styles/App.css';
 import MealsContainer from './MealsContainer';
 import ViewContainer from './ViewContainer';
 import favourites from './initialData';
-import recipe from './recipeForView';
 import sampleIdeas from './sampleIdeas';
 import Axios from 'axios';
 

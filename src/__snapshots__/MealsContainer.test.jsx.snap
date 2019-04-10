@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`construction of Meals Container with no props renders MealsContainer Component 1`] = `
+<div
+  className="columnContainer"
+>
+  <Nav
+    tabs={true}
+    tag="ul"
+    vertical={false}
+  >
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        className="active"
+        onClick={[Function]}
+        tag="a"
+      >
+        <b>
+          My Favourites
+        </b>
+      </NavLink>
+    </NavItem>
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        className=""
+        onClick={[Function]}
+        tag="a"
+      >
+        <b>
+          Need Ideas?
+        </b>
+      </NavLink>
+    </NavItem>
+  </Nav>
+  <TabContent
+    activeTab="1"
+    tag="div"
+  >
+    <TabPane
+      tabId="1"
+      tag="div"
+    >
+      <Row
+        tag="div"
+      />
+    </TabPane>
+    <TabPane
+      tabId="2"
+      tag="div"
+    >
+      <Row
+        tag="div"
+      >
+        <SearchInstruction />
+      </Row>
+    </TabPane>
+  </TabContent>
+</div>
+`;
+
+exports[`construction of Meals Container with props renders MealsContainer Component 1`] = `
+<div
+  className="columnContainer"
+>
+  <Nav
+    tabs={true}
+    tag="ul"
+    vertical={false}
+  >
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        className="active"
+        onClick={[Function]}
+        tag="a"
+      >
+        <b>
+          My Favourites
+        </b>
+      </NavLink>
+    </NavItem>
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        className=""
+        onClick={[Function]}
+        tag="a"
+      >
+        <b>
+          Need Ideas?
+        </b>
+      </NavLink>
+    </NavItem>
+  </Nav>
+  <TabContent
+    activeTab="1"
+    tag="div"
+  >
+    <TabPane
+      tabId="1"
+      tag="div"
+    >
+      <Row
+        tag="div"
+      >
+        <MealItem
+          id={1}
+          key="7"
+          title="Food"
+        />
+      </Row>
+    </TabPane>
+    <TabPane
+      tabId="2"
+      tag="div"
+    >
+      <Row
+        tag="div"
+      >
+        <SearchInstruction />
+        <MealItem
+          id={1}
+          key="7"
+          title="Food"
+        />
+      </Row>
+    </TabPane>
+  </TabContent>
+</div>
+`;

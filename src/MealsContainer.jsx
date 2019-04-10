@@ -37,7 +37,7 @@ export default class MealsContainer extends React.Component {
       return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe} removeRecipe={this.props.removeRecipe}/>
     }) : false;
 
-    const ideaItems = this.props.ideas.length > 0 ? this.props.ideas.map((item, index) => {
+    const ideaItems = this.props.ideas && this.props.ideas.length > 0 ? this.props.ideas.map((item, index) => {
       return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe}/>
     }) : false;
 
