@@ -20,6 +20,7 @@ class App extends Component {
     this.randomQuery = this.randomQuery.bind(this);
     this.addToFavourites = this.addToFavourites.bind(this);
     this.updateViewRecipe = this.updateViewRecipe.bind(this);
+    this.removeRecipe = this.removeRecipe.bind(this);
   }
 
   randomQuery = (keywords) => {
@@ -61,6 +62,16 @@ class App extends Component {
     })
   }
 
+  removeRecipe = (id) => {
+    const newFavourites = []
+    this.state.favourites.forEach(recipe =>{
+      if (recipe.id !== id) {
+        newFavourites.push(recipe)
+      }
+    })
+    this.setState({favourites: newFavourites})
+  }
+
   componentDidMount() {
     // this.randomQuery("dessert");
   }
@@ -77,6 +88,7 @@ class App extends Component {
             ideas = {this.state.ideas}
             updateViewRecipe = {this.updateViewRecipe}
             randomQuery = {this.randomQuery}
+            removeRecipe = {this.removeRecipe}
           />
           <ViewContainer {...this.state.viewRecipe} addToFavourites={this.addToFavourites} favourites={this.state.favourites}/>
         </section>

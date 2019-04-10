@@ -34,7 +34,7 @@ export default class MealsContainer extends React.Component {
 
   render() {
     const favouriteItems = this.props.favourites ? this.props.favourites.map((item, index) => {
-      return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe}/>
+      return <MealItem key={item.id*7+index} {...item} updateViewRecipe={this.props.updateViewRecipe} removeRecipe={this.props.removeRecipe}/>
     }) : false;
 
     const ideaItems = this.props.ideas.length > 0 ? this.props.ideas.map((item, index) => {

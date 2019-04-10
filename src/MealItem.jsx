@@ -6,8 +6,15 @@ export default class MealItem extends React.Component {
   handle_viewRecipe = () => {
     this.props.updateViewRecipe(this.props.id)
   }
+  handle_removeRecipe = () => {
+    const check = window.confirm(`Are you sure you want to remove this recipe?`);
+    if (check === true) {
+      this.props.removeRecipe(this.props.id)
+    }
+  }
 
   render() {
+    //this should become its own component and imported in. 
     const Dietary = () => {
       let dietType = [];
       if (this.props.vegetarian) {
@@ -28,6 +35,8 @@ export default class MealItem extends React.Component {
         return <h6><b>Dietary:</b> {dietType.join(', ')}</h6>;
       }
     }
+
+
     return (
       <Col sm="11" className="mealCard">
         <Card body>
@@ -37,6 +46,7 @@ export default class MealItem extends React.Component {
           <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
           <Dietary/>
           <a href="#recipe"><Button onClick={this.handle_viewRecipe}>View Recipe</Button></a>
+          <Button onClick={this.handle_removeRecipe}>Remove From Favourites</Button>
         </Card>
       </Col>
     );
