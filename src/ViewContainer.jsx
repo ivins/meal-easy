@@ -65,8 +65,8 @@ export default class ViewContainer extends React.Component {
       return (
         <div id="recipe" className="columnContainer">
         <TabContent >
-          <Col sm="11" className="recipeCard">
-            <Card body>
+          <Col sm="11" className="recipeCardContainer">
+            <Card body id="recipeCard">
               <h3>Recipe Panel</h3><br/>
               <h5>Select a recipe to view</h5>
             </Card>
@@ -78,8 +78,8 @@ export default class ViewContainer extends React.Component {
       return (
         <div id="recipe" className="columnContainer">
           <TabContent >
-            <Col sm="11" className="recipeCard">
-              <Card body>
+            <Col sm="11" className="recipeCardContainer">
+              <Card body id="recipeCard">
                 <h3>{this.props.title}</h3><br/>
                 <img src={this.props.image} alt={this.props.image}/><br/>
                 <h6><b>Servings:</b> {this.props.servings}   <b>Prep:</b> {this.props.preparationMinutes} minutes   <b>Cook:</b> {this.props.cookingMinutes} minutes</h6>

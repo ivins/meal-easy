@@ -38,13 +38,20 @@ nav > p {
   width: 100%;
 }
 
-.card-body, .recipeCard {
+.card-body, .recipeCardContainer {
   margin: .4em;
-  
+}
+
+#recipeCard {
+  background-color: cornsilk;
 }
 
 .mealCard {
   min-width: 420px;
+}
+
+.mealCard > .card-body {
+  background-color: cornsilk;
 }
 
 .mealCard > .card-body:hover {
@@ -115,7 +122,11 @@ nav > p {
   margin-right: .5em;
 }
 
-@media screen and (max-width: 915px) {
+#search {
+  background-color: #cd5c5cd9;
+}
+
+@media screen and (max-width: 940px) {
   .App section {
     display: block;
   }
