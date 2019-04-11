@@ -9,7 +9,7 @@ exports[`construction of View Container with no props renders ViewContainer Comp
     tag="div"
   >
     <Col
-      className="recipeCard"
+      className="recipeCardContainer"
       sm="11"
       tag="div"
       widths={
@@ -24,6 +24,7 @@ exports[`construction of View Container with no props renders ViewContainer Comp
     >
       <Card
         body={true}
+        id="recipeCard"
         tag="div"
       >
         <h3>
@@ -48,7 +49,7 @@ exports[`construction of View Container with recipe props renders ViewContainer 
     tag="div"
   >
     <Col
-      className="recipeCard"
+      className="recipeCardContainer"
       sm="11"
       tag="div"
       widths={
@@ -63,6 +64,7 @@ exports[`construction of View Container with recipe props renders ViewContainer 
     >
       <Card
         body={true}
+        id="recipeCard"
         tag="div"
       >
         <h3>
