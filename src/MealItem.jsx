@@ -41,7 +41,7 @@ export default class MealItem extends React.Component {
       <Col sm="11" className="mealCard">
         <Card body>
           <h5 className="card-title">{this.props.title}</h5>
-          <img src={this.props.image} alt="food"/>
+          <img src={this.props.image} alt="food" onClick={this.handle_viewRecipe}/>
           <h6><b>Servings:</b> {this.props.servings}</h6>   
           <h6><b>Ready in:</b> {this.props.readyInMinutes} minutes</h6>
           <Dietary/>

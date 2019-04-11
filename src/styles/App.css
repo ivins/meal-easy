@@ -54,6 +54,10 @@ nav > p {
   background-color: cornsilk;
 }
 
+.mealCard > div > img {
+  margin-bottom: .5em;
+}
+
 .mealCard > .card-body:hover {
   box-shadow: 0 2px 4px 0px #424040;
 }
