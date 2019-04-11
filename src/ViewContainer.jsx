@@ -50,7 +50,7 @@ export default class ViewContainer extends React.Component {
       if (dietType.length === 0) {
         return false
       } else {
-        return <h6><b>Dietary:</b> {dietType.join(', ')}</h6>;
+        return <h6 data-test="dietary"><b>Dietary:</b> {dietType.join(', ')}</h6>;
       }
     }
 

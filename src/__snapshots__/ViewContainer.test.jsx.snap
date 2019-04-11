@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`construction of View Container with no props renders ViewContainer Component 1`] = `
+<div
+  className="columnContainer"
+  id="recipe"
+>
+  <TabContent
+    tag="div"
+  >
+    <Col
+      className="recipeCard"
+      sm="11"
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Card
+        body={true}
+        tag="div"
+      >
+        <h3>
+          Recipe Panel
+        </h3>
+        <br />
+        <h5>
+          Select a recipe to view
+        </h5>
+      </Card>
+    </Col>
+  </TabContent>
+</div>
+`;
+
+exports[`construction of View Container with recipe props renders ViewContainer Component 1`] = `
+<div
+  className="columnContainer"
+  id="recipe"
+>
+  <TabContent
+    tag="div"
+  >
+    <Col
+      className="recipeCard"
+      sm="11"
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Card
+        body={true}
+        tag="div"
+      >
+        <h3>
+          Food
+        </h3>
+        <br />
+        <img
+          alt="http..."
+          src="http..."
+        />
+        <br />
+        <h6>
+          <b>
+            Servings:
+          </b>
+           
+          4
+             
+          <b>
+            Prep:
+          </b>
+           
+           minutes   
+          <b>
+            Cook:
+          </b>
+           
+          5
+           minutes
+        </h6>
+        <Dietary />
+        <br />
+        <h5>
+          Ingredients
+        </h5>
+        <ul
+          className="list-group"
+        >
+          <li
+            className="ingredient-item"
+            key="7"
+          >
+            <img
+              src="https://spoonacular.com/cdn/ingredients_100x100/gg"
+            />
+            <span />
+          </li>
+        </ul>
+        <br />
+        <h5>
+          Instructions
+        </h5>
+        <CardText
+          tag="p"
+        >
+          food
+        </CardText>
+        <br />
+        <Button
+          color="secondary"
+          onClick={[Function]}
+          tag="button"
+        >
+          Add to Favourites
+        </Button>
+      </Card>
+    </Col>
+  </TabContent>
+</div>
+`;
